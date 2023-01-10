@@ -12,12 +12,12 @@ jobs:
         type: 'zip'
         filename: 'release.zip'
         exclusions: '*.git* /*node_modules/* .editorconfig'
+        directory: './'
       
     - uses: actions/checkout@v3
     - uses: actions/upload-artifact@v3
       with:
         name: release
         path: release.zip
-    - run: ls /*
 
 
