@@ -5,4 +5,11 @@ jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
-      - run: zip -r file.zip -i ./
+        - uses: actions/checkout@master
+        - name: Archive Release
+        - uses: thedoctor0/zip-release@main
+          with:
+              type: 'zip'
+              filename: 'release.zip'
+              exclusions: '*.git* /*node_modules/* .editorconfig'
+
