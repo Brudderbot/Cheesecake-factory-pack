@@ -4,9 +4,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: montudor/action-zip@v1
+    - name: Compress
+      uses: TonyBogdanov/zip@1.0
       with:
-        args: zip -r file.zip ./
+        args: zip -qq -r ./archive.zip ./*
 
     - uses: actions/checkout@v3
     - uses: actions/upload-artifact@v3
