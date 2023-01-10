@@ -4,6 +4,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+
     - uses: actions/checkout@master
     - name: Archive Release
       uses: thedoctor0/zip-release@main
@@ -11,3 +12,10 @@ jobs:
         type: 'zip'
         filename: 'release.zip'
         exclusions: '*.git* /*node_modules/* .editorconfig'
+    - uses: actions/checkout@v3
+    - uses: actions/upload-artifact@v3
+      with:
+        name: my-artifact
+        path: ./file.zip
+
+
