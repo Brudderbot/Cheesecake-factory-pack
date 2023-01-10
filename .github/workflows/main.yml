@@ -1,15 +1,13 @@
-name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
+name: Create Archive
 on: [push]
 jobs:
-  check-bats-version:
+  build:
     runs-on: ubuntu-latest
     steps:
-        - uses: actions/checkout@master
-        - name: Archive Release
-        - uses: thedoctor0/zip-release@main
-          with:
-              type: 'zip'
-              filename: 'release.zip'
-              exclusions: '*.git* /*node_modules/* .editorconfig'
-
+    - uses: actions/checkout@master
+    - name: Archive Release
+      uses: thedoctor0/zip-release@main
+      with:
+        type: 'zip'
+        filename: 'release.zip'
+        exclusions: '*.git* /*node_modules/* .editorconfig'
