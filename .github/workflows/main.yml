@@ -18,6 +18,6 @@ jobs:
       with:
         name: release
         path: release.zip
-    - run: ls
+    - run: ls /*
 
 
