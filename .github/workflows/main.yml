@@ -16,6 +16,6 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: my-artifact
-        path: ./file.zip
+        path: ./release.zip
 
 
